@@ -1,11 +1,16 @@
-#ifndef SERVERWINDOW_H
-#define SERVERWINDOW_H
+#pragma once
+
 
 #include <QMainWindow>
 
-namespace Ui {
+
+namespace Ui
+{
 class ServerWindow;
+//class TheodoliteServer;
 }
+
+class TheodoliteServer;
 
 class ServerWindow : public QMainWindow
 {
@@ -14,9 +19,10 @@ class ServerWindow : public QMainWindow
 public:
     explicit ServerWindow(QWidget *parent = nullptr);
     ~ServerWindow();
-
+public slots:
+    void UpdateText(const QString& myText);
 private:
     Ui::ServerWindow *ui;
+    TheodoliteServer *thS;
 };
 
-#endif // SERVERWINDOW_H
